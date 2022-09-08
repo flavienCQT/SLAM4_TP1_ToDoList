@@ -12,6 +12,8 @@ framework Laravel sur des bases de développement PHP connu.
 
 ### Initialiser la base de données
 
+test
+
 ```shell
 php mvc db:migrate
 ```
