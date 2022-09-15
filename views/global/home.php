@@ -12,3 +12,5 @@
         </div>
     </div>
 </div>
+<a href=views/todos/liste.php class="btn btn-outline-success">
+<i class="bi bi-check"></i>
