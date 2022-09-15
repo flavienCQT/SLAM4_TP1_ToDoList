@@ -1,10 +1,11 @@
 <?php
 
 $DB_SERVER = getenv("MVC_SERVER") ?: "127.0.0.1";
-$DB_DATABASE = getenv("MVC_DB") ?: "formaflix";
+$DB_DATABASE = getenv("MVC_DB") ?: "SLAM4_ToDoList";
 $DB_USER = getenv("MVC_USER") ?: "root";
-$DB_PASSWORD = getenv("MVC_TOKEN") ?: "";
+$DB_PASSWORD = getenv("MVC_TOKEN") ?: "root";
 $DEBUG = getenv("MVC_DEBUG") ?: true;
+
 
 return array(
     "DB_USER" => $DB_USER,
