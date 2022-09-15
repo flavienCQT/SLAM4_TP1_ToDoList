@@ -16,4 +16,9 @@ class SampleWeb extends Web
     {
         Template::render("views/global/about.php", array("titre" => "À Propos", "dateDuJour" => date("d-m-Y à H:i")));
     }
+
+    function sample($id)
+    {
+        echo "Vous consulter l'identifiant $id";
+    }
 }

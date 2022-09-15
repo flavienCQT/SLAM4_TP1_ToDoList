@@ -6,7 +6,7 @@
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, commodi delectus eaque eos esse ex illum laboriosam laborum modi, molestias necessitatibus non provident quidem quis repellat soluta tempore, veritatis vitae.
                 </p>
-                <img src="public\style\IMG_1402.JPG" alt="" class="imageFond">
+                <img src="public\style\clous.jpeg" alt="" class="imageFond">
                 <div class="text-center">Page générée le <?= $date ?></div>
             </div>
         </div>
