@@ -15,11 +15,15 @@
                     ?>
                     <li class="list-group-item">
                         <div class="d-flex">
+
+                                
+                            <div class="flex-grow-1 align-self-center"><?= $todo['texte'] ?></div>
+                            <div>
                             <?php
-                                if ($todo['termine']=1){
+                                if ($todo['termine']==0){
                                 ?>
                                 
-                                    <a href="./terminer?id=<?= $todo['id'] ?>" class="btn btn-outline-danger">
+                                    <a href="./terminer?id=<?= $todo['id'] ?>" class="btn btn-outline-success">
                                     <i class="bi bi-check"></i>
                                     </a>    
                                 <?php
@@ -27,16 +31,12 @@
                                 else
                                 {
                                     ?>
-                                    <a href="./terminer?id=<?= $todo['id'] ?>" class="btn btn-outline-success">
-                                    <i class="bi bi-check"></i>
+                                    <a href="./supprimer?id=<?= $todo['id'] ?>" class="btn btn-outline-danger">
+                                    <i class="bi bi-trash"></i>
                                     </a>
                                     <?php
                                 }
                                 ?>
-                                
-                            <div class="flex-grow-1 align-self-center"><?= $todo['texte'] ?></div>
-                            <div>
-                              
                                                         
                             </div>
                         </div>
