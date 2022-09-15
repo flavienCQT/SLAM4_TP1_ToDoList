@@ -21,4 +21,10 @@ class SampleWeb extends Web
     {
         echo "Vous consulter l'identifiant $id";
     }
+
+    function todo()
+    {
+        Template::render("views/todos/liste.php", array("titre" => "ToDoList"));
+    }
+
 }
