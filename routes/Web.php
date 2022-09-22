@@ -4,10 +4,12 @@ namespace routes;
 
 use routes\base\Route;
 use controllers\Account;
+use controllers\AuthController;
 use controllers\TodoWeb;
 use controllers\VideoWeb;
 use utils\SessionHelpers;
 use controllers\SampleWeb;
+use controllers\usersController;
 
 class Web
 {
@@ -19,6 +21,7 @@ class Web
         Route::Add('/about', [$main, 'about']);
         Route::Add('/sample/{id}', [$main, 'sample']);
         Route::Add('/todos/liste', [$main, 'liste']);
+        Route::Add('/todos/liste', [$main, 'liste']);
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
         //        if (SessionHelpers::isLogin()) {
@@ -26,10 +29,15 @@ class Web
         //        }
 
         $todo = new TodoWeb();
+
         Route::Add('/todo/liste', [$todo, 'liste']);
         Route::Add('/todo/ajouter', [$todo, 'ajouter']);
         Route::Add('/todo/terminer', [$todo, 'terminer']);
         Route::Add('/todo/supprimer', [$todo, 'supprimer']);
+
+        $Auth = new AuthController();
+
+        Route::Add('/users/inscription', [$Auth, 'auth']);
     }
 }
 

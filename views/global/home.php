@@ -12,5 +12,7 @@
         </div>
     </div>
 </div>
-<a href=views/todos/liste.php class="btn btn-outline-success">
-<i class="bi bi-check"></i>
+<a href=todo/liste class="btn btn-outline-success">
+<a href=views/users/inscription.php>
+
+<i class="bi bi-list"></i>
