@@ -27,8 +27,7 @@ class Web
 
         Route::Add('/users/inscription', [$authentification, 'auth']);
         Route::Add('/users/home', [$authentification, 'home']);
-        Route::Add('/users/authh', [$authentification, 'login']);
-        Route::Add('/logout', [$authentification, 'logout']);
+        Route::Add('/users/authh', [$authentification, 'auth']);
         //Route::Add('/login/inscrire', [$Auth, 'inscrire']);
         //Route::Add('/users/create', [$Auth, 'create']);
 
@@ -40,9 +39,12 @@ class Web
         $todo = new TodoWeb();
         if (SessionHelpers::isLogin()){
         Route::Add('/todo/liste', [$todo, 'liste']);
+        Route::Add('/todo/listeUser', [$todo, 'listeUser']);
         Route::Add('/todo/ajouter', [$todo, 'ajouter']);
         Route::Add('/todo/terminer', [$todo, 'terminer']);
         Route::Add('/todo/supprimer', [$todo, 'supprimer']);
+        Route::Add('/sample/{id}', [$todo, 'sample']);
+        Route::Add('/deco', [$authentification, 'logout']);
         }
         
 

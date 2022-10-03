@@ -13,6 +13,8 @@ class AuthController extends Web
     
     function auth($username = "", $password = "")
     {
+        var_dump($username);
+        var_dump($password);
         $user = strip_tags($username);
         $pass = strip_tags($password);
         if (SessionHelpers::isLogin()) {
@@ -20,7 +22,7 @@ class AuthController extends Web
         }
 
         $erreur = "";
-        if (!empty($user)) {
+        if (!empty($user) && !empty($password)) {
             $verificationLogin = new \models\Log();
 
             $Verif = $verificationLogin->authh($user, $pass);
@@ -29,6 +31,7 @@ class AuthController extends Web
                 $this->redirect("../todo/liste");
             } else {
                 SessionHelpers::logout();
+                $this->redirect("../todo/liste");
                 $erreur = "Connexion impossible avec vos identifiants";
             }
         }
@@ -37,5 +40,9 @@ class AuthController extends Web
         
     }
 
-
+    function logout(): void
+    {
+        SessionHelpers::logout();
+        $this->redirect("../users/inscription");
+    }
 }

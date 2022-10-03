@@ -20,12 +20,11 @@ class Log extends SQL
         $stmt->execute([$username]);
         $result = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-        if (password_verify($password, $result['password'])) {
+        if ($password = $result['password']) {
             return $result;
         } else {
             return null;
         }
-
     }
 
 }

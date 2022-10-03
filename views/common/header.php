@@ -17,11 +17,12 @@
             <?php
             if (\utils\SessionHelpers::isLogin()) {
                 echo '<li class="nav-item"><a href="./me" class="nav-link">Mon compte</a></li>';
+                echo '<li class="nav-item"><a href="../deco" class="nav-link">Se deconnecter</a></li>';
             }
             ?>
             <li class="nav-item"><a href="./about" class="nav-link">À propos</a></li>
             <li class="nav-item"><a href="todo/liste" class="nav-link">Liste</a></li>
-            <li class="nav-item"><a href="users/inscription" class="nav-link">Mon compte</a></li>
+            <li class="nav-item"><a href="users/inscription" class="nav-link">Se connecter</a></li>
         </ul>
     </div>
 </nav>
