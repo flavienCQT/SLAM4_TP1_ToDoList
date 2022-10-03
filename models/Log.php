@@ -1,45 +1,27 @@
 <?php
 namespace models;
 
+use PDO;
 use models\base\SQL;
 
 
-class log extends SQL
+class Log extends SQL
 {
     public function __construct()
     {
-        parent::__construct('SLAM4_ToDoList', 'username');
+        parent::__construct('user', 'username');
     }
 
-    /*public function login(string $login, string $password): mixed
+    public function authh(string $username, string $password)
     {
-        $stmt = $this->pdo->prepare('SELECT * FROM USER WHERE username = ? LIMIT 1');
-        $stmt->execute([$login]);
-        $user = $stmt->fetch(\PDO::FETCH_ASSOC);
-
-        if (password_verify($password, $user['password'])) {
-            return $user;
-        } else {
-            return null;
-        }
-    }
-    */
-    //Création fonction pour intéragir avec la BDD
-
-    /**
-     * Authentifie une équipe en fonction de son login et mot de passe.
-     * @param string $login
-     * @param string $password
-     * @return mixed|null
-     */
-    public function auth(string $username, string $password): mixed
-    {
-        $stmt = $this->pdo->prepare('SELECT * FROM USER WHERE username = ? LIMIT 1');
+        strip_tags($username);
+        strip_tags($password);
+        $stmt = $this->pdo->prepare('SELECT * FROM user WHERE username = ? LIMIT 1');
         $stmt->execute([$username]);
-        $username = $stmt->fetch(\PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(\PDO::FETCH_ASSOC);
 
-        if (password_verify($password, $username['password'])) {
-            return $username;
+        if (password_verify($password, $result['password'])) {
+            return $result;
         } else {
             return null;
         }

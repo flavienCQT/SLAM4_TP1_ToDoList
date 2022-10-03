@@ -21,6 +21,7 @@
             ?>
             <li class="nav-item"><a href="./about" class="nav-link">À propos</a></li>
             <li class="nav-item"><a href="todo/liste" class="nav-link">Liste</a></li>
+            <li class="nav-item"><a href="users/inscription" class="nav-link">Mon compte</a></li>
         </ul>
     </div>
 </nav>

@@ -13,6 +13,4 @@
     </div>
 </div>
 <a href=todo/liste class="btn btn-outline-success">
-<a href=views/users/inscription.php>
-
 <i class="bi bi-list"></i>

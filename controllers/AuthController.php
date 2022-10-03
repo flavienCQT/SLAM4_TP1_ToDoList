@@ -1,6 +1,7 @@
 <?php
 namespace controllers;
 
+use models\Log;
 use utils\Template;
 use controllers\base\Web;
 use utils\SessionHelpers;
@@ -10,20 +11,22 @@ use utils\SessionHelpers;
 class AuthController extends Web
 {
     
-    function auth($login = "", $password = "")
+    function auth($username = "", $password = "")
     {
+        $user = strip_tags($username);
+        $pass = strip_tags($password);
         if (SessionHelpers::isLogin()) {
             $this->redirect("/");
         }
 
         $erreur = "";
-        if (!empty($login) && !empty($password)) {
-            $loginModel = new \models\Log();
+        if (!empty($user)) {
+            $verificationLogin = new \models\Log();
 
-            $user = $loginModel->auth($login, $password);
-            if ($user != null) {
-                SessionHelpers::login($user);
-                $this->redirect("todo/liste");
+            $Verif = $verificationLogin->authh($user, $pass);
+            if ($Verif != null) {
+                SessionHelpers::login($Verif);
+                $this->redirect("../todo/liste");
             } else {
                 SessionHelpers::logout();
                 $erreur = "Connexion impossible avec vos identifiants";

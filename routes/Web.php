@@ -19,9 +19,18 @@ class Web
 
         Route::Add('/', [$main, 'home']);
         Route::Add('/about', [$main, 'about']);
-        Route::Add('/sample/{id}', [$main, 'sample']);
+        /*Route::Add('/sample/{id}', [$main, 'sample']);
         Route::Add('/todos/liste', [$main, 'liste']);
-        Route::Add('/todos/liste', [$main, 'liste']);
+        Route::Add('/todos/liste', [$main, 'liste']);*/
+
+        $authentification = new AuthController();
+
+        Route::Add('/users/inscription', [$authentification, 'auth']);
+        Route::Add('/users/home', [$authentification, 'home']);
+        Route::Add('/users/authh', [$authentification, 'login']);
+        Route::Add('/logout', [$authentification, 'logout']);
+        //Route::Add('/login/inscrire', [$Auth, 'inscrire']);
+        //Route::Add('/users/create', [$Auth, 'create']);
 
         //        Exemple de limitation d'accès à une page en fonction de la SESSION.
         //        if (SessionHelpers::isLogin()) {
@@ -29,15 +38,14 @@ class Web
         //        }
 
         $todo = new TodoWeb();
-
+        if (SessionHelpers::isLogin()){
         Route::Add('/todo/liste', [$todo, 'liste']);
         Route::Add('/todo/ajouter', [$todo, 'ajouter']);
         Route::Add('/todo/terminer', [$todo, 'terminer']);
         Route::Add('/todo/supprimer', [$todo, 'supprimer']);
+        }
+        
 
-        $Auth = new AuthController();
-
-        Route::Add('/users/inscription', [$Auth, 'auth']);
     }
 }
 
