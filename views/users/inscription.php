@@ -1,5 +1,5 @@
        <!-- zone de connexion -->
-        <form action="./authh" method="POST">
+        <form action="./authh" method="POST" class="form">
             <h1 class="connexionPolice">Connexion</h1>
 
             <label class="connexionPolice"><b>Login</b></label>

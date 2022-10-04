@@ -2,11 +2,11 @@
     <div class="row">
         <div class="card">
             <div class="card-body">
-                <h3>Site de démonstration</h3>
+                <h3>To Do List</h3>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, commodi delectus eaque eos esse ex illum laboriosam laborum modi, molestias necessitatibus non provident quidem quis repellat soluta tempore, veritatis vitae.
+                    Bienvenue sur votre To Do List.
                 </p>
-                <img src="public\style\clous.jpeg" alt="" class="imageFond">
+                <!--<img src="public\style\clous.jpeg" alt="" class="imageFond">-->
                 <div class="text-center">Page générée le <?= $date ?></div>
             </div>
         </div>

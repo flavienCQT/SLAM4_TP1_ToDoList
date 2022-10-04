@@ -13,8 +13,8 @@ class AuthController extends Web
     
     function auth($username = "", $password = "")
     {
-        var_dump($username);
-        var_dump($password);
+        //var_dump($username);
+        //var_dump($password);
         $user = strip_tags($username);
         $pass = strip_tags($password);
         if (SessionHelpers::isLogin()) {
