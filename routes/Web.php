@@ -19,6 +19,7 @@ class Web
 
         Route::Add('/', [$main, 'home']);
         Route::Add('/about', [$main, 'about']);
+        Route::Add('/users/inscription', [$main, 'inscription']);
         /*Route::Add('/sample/{id}', [$main, 'sample']);
         Route::Add('/todos/liste', [$main, 'liste']);
         Route::Add('/todos/liste', [$main, 'liste']);*/

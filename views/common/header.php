@@ -12,7 +12,7 @@
 <body class="<?= isset($_GET['id']) ? 'brick' : '' ?>">
 <nav class="navbar navbar-expand-lg navbar-dark bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" style="color: #62929E;" href="/">To Do List</a>
+        <a class="navbar-brand" style="color: black;" href="/">To Do List</a>
         <ul class="nav nav-pills">
         <li class="nav-item"><a href="./about" class="nav-link">À propos</a></li>
             <?php
