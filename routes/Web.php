@@ -29,6 +29,8 @@ class Web
         Route::Add('/users/inscription', [$authentification, 'auth']);
         Route::Add('/users/home', [$authentification, 'home']);
         Route::Add('/users/authh', [$authentification, 'auth']);
+        Route::Add('/users/connexion', [$authentification, 'create']);
+        //Route::Add('/users/authh', [$authentification, 'inscrire']);
         //Route::Add('/login/inscrire', [$Auth, 'inscrire']);
         //Route::Add('/users/create', [$Auth, 'create']);
 

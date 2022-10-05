@@ -24,6 +24,7 @@
             }
             else {
                 echo '<li class="nav-item"><a href="users/inscription" class="nav-link">Se connecter</a></li>';
+                echo '<li class="nav-item"><a href="users/connexion" class="nav-link">Inscris-toi</a></li>';
             }
             ?>
         </ul>

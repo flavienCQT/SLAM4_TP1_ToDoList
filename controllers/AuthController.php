@@ -11,6 +11,30 @@ use utils\SessionHelpers;
 class AuthController extends Web
 {
     
+    function create($username = "", $password = "",$password1 = "", $mail = "")
+    {
+
+        $loginInscrire = htmlspecialchars($username);
+        $mailInscrire = htmlspecialchars($mail);
+        $mdp1 = strip_tags($password);
+        $mdp2 = strip_tags($password1);
+        $verificationLogin = new \models\Log();
+        $VerifLoginInscrire = $verificationLogin->VerifLogin($loginInscrire);
+        if(!$VerifLoginInscrire){
+            if ($mdp1 == $mdp2 && !empty($password) && !empty($password1))
+            {          
+                $this->Log->createA($username, $password,$mail);
+                $this->redirect("../users/inscription");
+            }
+            else
+            {
+                $erreur = "Vos mots de passe ne sont pas identiques";
+            }
+        }else $erreur = "Un compte portant se nom éxiste déjà";
+        Template::render("views/users/connexion.php" , array('erreur' => $erreur));    
+    }
+
+
     function auth($username = "", $password = "")
     {
         //var_dump($username);
@@ -31,7 +55,7 @@ class AuthController extends Web
                 $this->redirect("../todo/liste");
             } else {
                 SessionHelpers::logout();
-                $this->redirect("../todo/liste");
+                $this->redirect("./inscription");
                 $erreur = "Connexion impossible avec vos identifiants";
             }
         }
@@ -44,5 +68,10 @@ class AuthController extends Web
     {
         SessionHelpers::logout();
         $this->redirect("../users/inscription");
+    }
+
+    function inscrire(): void
+    {
+        Template::render("views/users/inscription.php", array());
     }
 }
